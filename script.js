@@ -111,7 +111,7 @@ function generatePledge() {
 
   document.getElementById("pledgeBox").innerText = fullText;
 
-  const tweetText = `Just took the pledge for FogoChain.\n\n${pledge}\n\nTake yours now — before you're the last one left wondering.\n\n👉 https://your-site.vercel.app\n\n#FogoChain #PledgedToFogo`;
+  const tweetText = `Just took the pledge for FogoChain.\n\n${pledge}\n\nTake yours now — before you're the last one left wondering.\n\n👉 https://fogo-pledge.vercel.app\n\n#FogoChain #PledgedToFogo`;
 
   const tweetIntentUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
   document.getElementById("postBtn").setAttribute("href", tweetIntentUrl);
