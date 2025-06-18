@@ -60,19 +60,18 @@
       flex-wrap: wrap;
     }
 
-    button {
+    a.btn {
       padding: 0.6rem 1.2rem;
       font-size: 1rem;
       font-weight: 600;
       color: white;
       background-color: #f97316;
-      border: none;
       border-radius: 6px;
-      cursor: pointer;
+      text-decoration: none;
       transition: background 0.3s ease;
     }
 
-    button:hover {
+    a.btn:hover {
       background-color: #ea580c;
     }
 
@@ -105,7 +104,7 @@
         font-size: 1.1rem;
       }
 
-      button {
+      a.btn {
         font-size: 0.9rem;
         padding: 0.5rem 1rem;
       }
@@ -122,18 +121,17 @@
     <p class="note">(Not satisfied? Refresh to find your fire.)</p>
 
     <div class="buttons">
-      <button onclick="generatePledge()">Refresh Pledge</button>
-      <button onclick="copyToClipboard()">Ready to Post on X</button>
+      <a href="#" id="refreshBtn" class="btn">Refresh Pledge</a>
+      <a href="#" id="postBtn" class="btn" target="_blank">Ready to Post on X</a>
     </div>
 
-   <footer>
-     <hr>
-     Built for the FogoChain community. No gimmicks, just fire.<br><br>
-     Crafted with conviction by <strong>bytrizz</strong> · 
-     <a href="https://x.com/bytrizz404" target="_blank" style="color:#f97316; text-decoration:none;">@bytrizz404</a> · 
-     <span style="white-space: nowrap;">Discord: <code>bytrizz</code></span>
-   </footer>
-
+    <footer>
+      <hr>
+      Built for the FogoChain community. No gimmicks, just fire.<br><br>
+      Crafted with conviction by <strong>bytrizz</strong> · 
+      <a href="https://x.com/bytrizz404" target="_blank">@bytrizz404</a> · 
+      Discord: <code>bytrizz</code>
+    </footer>
   </div>
 
   <script src="script.js"></script>
