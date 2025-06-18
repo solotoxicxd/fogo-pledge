@@ -107,20 +107,23 @@ const pledges = [
 function generatePledge() {
   const randomIndex = Math.floor(Math.random() * pledges.length);
   const pledge = pledges[randomIndex];
-  const fullText = `"${pledge}"`;
+  const quotedPledge = `"${pledge}"`;
 
-  document.getElementById("pledgeBox").innerText = fullText;
+  // Update the UI
+  document.getElementById("pledgeBox").innerText = quotedPledge;
 
-  const tweetText = `Just took the pledge for FogoChain.\n\n${pledge}\n\nTake yours now — before you're the last one left wondering.\n\n👉 https://fogo-pledge.vercel.app\n\n#FogoChain #PledgedToFogo`;
-
+  // Prepare tweet intent with quotes
+  const tweetText = `Just took the pledge for FogoChain.\n\n${quotedPledge}\n\nTake yours now — before you're the last one left wondering.\n\n👉 https://fogo-pledge.vercel.app\n\n#FogoChain #PledgedToFogo`;
   const tweetIntentUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
+
+  // Set the href for post button
   document.getElementById("postBtn").setAttribute("href", tweetIntentUrl);
 }
 
 // Run on page load
 window.onload = generatePledge;
 
-// Link refresh button to regenerate and update intent
+// Refresh pledge on button click
 document.getElementById("refreshBtn").addEventListener("click", function (e) {
   e.preventDefault();
   generatePledge();
