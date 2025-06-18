@@ -105,19 +105,23 @@ const pledges = [
 ];
 
 function generatePledge() {
-  const random = pledges[Math.floor(Math.random() * pledges.length)];
-  const fullText = `${random} #PledgedToFOGO`;
-  document.getElementById('pledgeBox').textContent = fullText;
+  const randomIndex = Math.floor(Math.random() * pledges.length);
+  const pledge = pledges[randomIndex];
+  const fullText = `"${pledge}"`;
 
-  const tweetIntent = `https://x.com/intent/tweet?text=${encodeURIComponent(fullText)}&url=https://fogochain.xyz`;
-  document.getElementById('postBtn').href = tweetIntent;
+  document.getElementById("pledgeBox").innerText = fullText;
+
+  const tweetText = `Just took the pledge for FogoChain.\n\n${pledge}\n\nTake yours now — before you're the last one left wondering.\n\n👉 https://your-site.vercel.app\n\n#FogoChain #PledgedToFogo`;
+
+  const tweetIntentUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
+  document.getElementById("postBtn").setAttribute("href", tweetIntentUrl);
 }
 
-// Link "Refresh Pledge" to generatePledge
-document.getElementById('refreshBtn').addEventListener('click', function (e) {
+// Run on page load
+window.onload = generatePledge;
+
+// Link refresh button to regenerate and update intent
+document.getElementById("refreshBtn").addEventListener("click", function (e) {
   e.preventDefault();
   generatePledge();
 });
-
-// On page load
-window.onload = generatePledge;
