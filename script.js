@@ -21,9 +21,8 @@ function getPledge() {
 }
 
 function postToX() {
-  const handle = document.getElementById("xhandle").value.trim();
-  if (!handle || !currentPledge) return alert("Enter X handle and get a pledge first!");
-  const text = encodeURIComponent(`🔥 ${currentPledge} via @${handle} #Fogochain`);
+  if (!currentPledge) return alert("Get a pledge first!");
+  const text = encodeURIComponent(`🔥 ${currentPledge} #Fogochain`);
   const url = `https://twitter.com/intent/tweet?text=${text}`;
   window.open(url, "_blank");
 }
