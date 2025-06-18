@@ -106,7 +106,7 @@ const pledges = [
 
 function generatePledge() {
   const random = pledges[Math.floor(Math.random() * pledges.length)];
-  document.getElementById('pledgeBox').textContent = `${random} #FogoChain\n\nI’m Fogo’ised.`;
+  document.getElementById('pledgeBox').textContent = `${random} \n #PledgedToFOGO`;
 }
 
 function copyToClipboard() {
