@@ -106,14 +106,18 @@ const pledges = [
 
 function generatePledge() {
   const random = pledges[Math.floor(Math.random() * pledges.length)];
-  document.getElementById('pledgeBox').textContent = `${random} \n #PledgedToFOGO`;
+  const fullText = `${random} #PledgedToFOGO`;
+  document.getElementById('pledgeBox').textContent = fullText;
+
+  const tweetIntent = `https://x.com/intent/tweet?text=${encodeURIComponent(fullText)}&url=https://fogochain.xyz`;
+  document.getElementById('postBtn').href = tweetIntent;
 }
 
-function copyToClipboard() {
-  const pledgeText = document.getElementById('pledgeBox').textContent;
-  navigator.clipboard.writeText(pledgeText).then(() => {
-    alert('Copied! Paste it on your X post.');
-  });
-}
+// Link "Refresh Pledge" to generatePledge
+document.getElementById('refreshBtn').addEventListener('click', function (e) {
+  e.preventDefault();
+  generatePledge();
+});
 
+// On page load
 window.onload = generatePledge;
