@@ -8,48 +8,65 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
+      background: #0a0a0a;
+      color: #fff;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      padding: 2rem;
+      align-items: center;
       min-height: 100vh;
-      background: #0c0c0c;
-      color: white;
-    }
-    .card {
-      background: #1a1a1a;
       padding: 2rem;
+      margin: 0;
+    }
+    .container {
+      background: #151515;
       border-radius: 16px;
-      max-width: 500px;
+      padding: 2rem;
+      box-shadow: 0 0 20px rgba(255, 102, 0, 0.3);
+      max-width: 480px;
       width: 100%;
       text-align: center;
-      box-shadow: 0 0 10px #ff9900;
     }
-    input, button {
-      padding: 0.75rem;
-      margin: 1rem 0;
-      width: 100%;
-      border-radius: 8px;
-      border: none;
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #ff6600;
+    }
+    .pledge {
+      margin: 1.5rem 0;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #f2f2f2;
+      min-height: 60px;
     }
     button {
       background-color: #ff6600;
-      color: white;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.2rem;
+      font-size: 1rem;
+      border-radius: 8px;
       cursor: pointer;
+      margin: 0.5rem 0;
+      width: 100%;
+      transition: background 0.3s ease;
     }
-    .pledge {
-      font-size: 1.2rem;
-      margin: 1rem 0;
+    button:hover {
+      background-color: #ff4400;
+    }
+    footer {
+      font-size: 0.75rem;
+      margin-top: 1.5rem;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h2>🔥 Take the Fogo Pledge</h2>
-    <div class="pledge" id="pledge">Click refresh to get your pledge.</div>
+  <div class="container">
+    <h1>🔥 Take the FogoChain Pledge</h1>
+    <div class="pledge" id="pledge">Click “Refresh” to get your pledge.</div>
     <button onclick="getPledge()">🔁 Refresh Pledge</button>
     <button onclick="postToX()">🐦 Post to X</button>
+    <footer>Made with fire for the Fogo community</footer>
   </div>
 
   <script src="script.js"></script>
