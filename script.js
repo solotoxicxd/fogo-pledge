@@ -113,7 +113,7 @@ function generatePledge() {
   document.getElementById("pledgeBox").innerText = quotedPledge;
 
   // Prepare tweet intent with quotes
-  const tweetText = `Just took the pledge for FogoChain.\n\n${quotedPledge}\n\nTake yours now — before you're the last one left wondering.\n\n👉 https://fogo-pledge.vercel.app\n\n#FogoChain #PledgedToFogo`;
+  const tweetText = `Just took the pledge for FogoChain.\n\n${quotedPledge}\n\nTake yours now — before you're the last one left wondering.\n\n👉 https://fogo-pledge.vercel.app\n\n#PledgedToFogo`;
   const tweetIntentUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
 
   // Set the href for post button
