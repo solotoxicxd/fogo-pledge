@@ -3,30 +3,117 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FogoChain Pledge</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Fogochain Pledge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #f97316, #fb923c);
+      color: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 90%;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    p.subtitle {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    #pledgeBox {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: white;
+      background-color: #f97316;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ea580c;
+    }
+
+    footer {
+      font-size: 0.85rem;
+      color: #444;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      #pledgeBox {
+        font-size: 1.1rem;
+      }
+
+      button {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="page-wrapper">
-    <header>
-      <h1>Take the FogoChain Pledge</h1>
-      <p class="subhead">Make your mark. Stand with the chain.</p>
-    </header>
+  <div class="container">
+    <h1>Take the FogoChain Pledge</h1>
+    <p class="subtitle">Make your mark. Stand with the chain.</p>
 
-    <main>
-      <div class="card">
-        <div id="pledgeBox">Loading a pledge...</div>
-        <p class="refresh-note">(Not satisfied? Refresh to find your fire.)</p>
+    <div id="pledgeBox">"Loading your pledge..."</div>
 
-        <div class="buttons">
-          <button onclick="generatePledge()">Refresh Pledge</button>
-          <button onclick="copyToClipboard()">Ready to Post on X</button>
-        </div>
-      </div>
-    </main>
+    <p class="note">(Not satisfied? Refresh to find your fire.)</p>
+
+    <div class="buttons">
+      <button onclick="generatePledge()">Refresh Pledge</button>
+      <button onclick="copyToClipboard()">Ready to Post on X</button>
+    </div>
 
     <footer>
-      <p class="footer-note">Built for the FogoChain community. No gimmicks, just fire.</p>
+      Built for the FogoChain community. No gimmicks, just fire.
     </footer>
   </div>
 
