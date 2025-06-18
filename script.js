@@ -197,7 +197,7 @@ const pledges = [
   "I march to the beat of blocks. I'm Fogolised 🔥",
   "I’m the spark of change. I'm Fogolised 🔥",
   "I keep the flame eternal. I'm Fogolised 🔥",
-  "My pledge burns with purpose. I'm Fogolised 🔥"
+  "My pledge burns with purpose. I'm Fogolised 🔥",
 ];
 
 function generatePledge() {
