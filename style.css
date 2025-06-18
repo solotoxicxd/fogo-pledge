@@ -1,83 +1,72 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+const pledges = [
+  "I stand for transparent markets and open finance. I'm Fogolised.",
+  "I move with conviction, not speculation. I'm Fogolised.",
+  "I support onchain trading built for real world use. I'm Fogolised.",
+  "I pledge to bring truth and transparency to every transaction. I'm Fogolised.",
+  "I build where there's fire. I'm Fogolised.",
+  "I choose trustless over trust. I'm Fogolised.",
+  "I follow the signal, not the noise. I'm Fogolised.",
+  "Code. Trade. Repeat. I'm Fogolised.",
+  "I stand with the flame. I'm Fogolised.",
+  "I commit to decentralised innovation. I'm Fogolised.",
+  "The future of finance is onchain. I'm Fogolised.",
+  "Real traders trade where it’s real. I’m Fogolised.",
+  "I support permissionless and powerful execution. I'm Fogolised.",
+  "I’m done with fake volume. I'm Fogolised.",
+  "I build for the long game. I'm Fogolised.",
+  "I want markets that make sense. I'm Fogolised.",
+  "Fogo is not a trend — it’s a transition. I'm Fogolised.",
+  "I don’t wait for adoption. I start it. I'm Fogolised.",
+  "This is more than a pledge — it's a movement. I'm Fogolised.",
+  "Builders don’t follow hype. We create it. I'm Fogolised.",
+  "Market structure matters. I’m Fogolised.",
+  "I stand with liquidity, not illusion. I’m Fogolised.",
+  "Fire doesn't ask for permission. I'm Fogolised.",
+  "I pledge to put code before clout. I'm Fogolised.",
+  "I choose alignment over algorithms. I'm Fogolised.",
+  "Onchain isn't optional. It's inevitable. I'm Fogolised.",
+  "I’m not fading Fogo. I’m forging it. I'm Fogolised.",
+  "Clarity. Commitment. Chain. I'm Fogolised.",
+  "This pledge is proof-of-intent. I'm Fogolised.",
+  "I’m here early. I'm Fogolised.",
+  "Volume is vanity, truth is traction. I'm Fogolised.",
+  "Trading should be transparent. I'm Fogolised.",
+  "I build in public. I trade onchain. I'm Fogolised.",
+  "Nothing fake survives fire. I'm Fogolised.",
+  "I walk the fire path. I'm Fogolised.",
+  "When others wait, I ship. I'm Fogolised.",
+  "I believe in programmable markets. I'm Fogolised.",
+  "I trust the math. I'm Fogolised.",
+  "Every pledge counts. I'm Fogolised.",
+  "The chain is calling. I'm Fogolised.",
+  "Where there's signal, there's Fogo. I'm Fogolised.",
+  "I pledge to the protocol. I'm Fogolised.",
+  "Aligned. Auditable. Alive. I'm Fogolised.",
+  "I’m not watching the future. I’m building it. I'm Fogolised.",
+  "This isn't noise. It's ignition. I'm Fogolised.",
+  "I'm not part of a moment. I'm part of momentum. I'm Fogolised.",
+  "Let it burn — I'm Fogolised.",
+  "I don't hedge belief. I'm Fogolised.",
+  "The pledge isn't a trend. It's a trigger. I'm Fogolised.",
+  "Structure over speculation. I'm Fogolised.",
+  "I don’t fork out. I fire up. I'm Fogolised.",
+  // Add more if you want up to 100+...
+];
+
+function generatePledge() {
+  const randomIndex = Math.floor(Math.random() * pledges.length);
+  const pledge = pledges[randomIndex];
+  document.getElementById("pledgeBox").innerText = `"${pledge}"`;
 }
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #0e0e0e;
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 2rem;
+function copyToClipboard() {
+  const pledgeText = document.getElementById("pledgeBox").innerText;
+  const xPost = `Just took the pledge for FogoChain\n\n${pledgeText}\n\nYou can take the pledge too — before you're the last one left wondering.\n\n👉 https://your-site.vercel.app\n\n#FogoChain #PledgedToFogo`;
+
+  navigator.clipboard.writeText(xPost).then(() => {
+    alert("Copied! You're ready to post on X.");
+  });
 }
 
-.page-wrapper {
-  width: 100%;
-  max-width: 600px;
-  text-align: center;
-}
-
-header h1 {
-  font-size: 2rem;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-}
-
-.subhead {
-  font-size: 1rem;
-  color: #ccc;
-  margin-bottom: 2rem;
-}
-
-.card {
-  background-color: #1a1a1a;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 0 20px rgba(255, 102, 0, 0.2);
-}
-
-#pledgeBox {
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
-  line-height: 1.6;
-}
-
-.refresh-note {
-  font-size: 0.85rem;
-  color: #888;
-  margin-bottom: 1.5rem;
-}
-
-.buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-button {
-  padding: 0.75rem 1.5rem;
-  background-color: #ff5c00;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  color: white;
-  cursor: pointer;
-  transition: background 0.2s ease-in-out;
-}
-
-button:hover {
-  background-color: #e65100;
-}
-
-footer {
-  margin-top: 2rem;
-}
-
-.footer-note {
-  font-size: 0.75rem;
-  color: #666;
-}
+// Generate a pledge on first load
+window.onload = generatePledge;
